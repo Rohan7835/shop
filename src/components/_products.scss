@@ -1,0 +1,85 @@
+@import "../variables";
+
+main {
+  margin-top: 90px;
+  margin-left: 300px;
+  padding: 10px;
+
+  .products-list {
+    @include flex(flex-start, row, center);
+    flex-wrap: wrap;
+    align-content: center;
+    animation: blur 0.6s ease-out;
+
+    .products {
+      height: 400px;
+      width: 218px;
+      padding: 10px;
+      background: #fff;
+      margin: 10px;
+      border-radius: 5px;
+      cursor: default;
+
+      .product-img {
+        width: 100%;
+        height: 180px;
+        img {
+          width: 100%;
+          height: 100%;
+        }
+      }
+      .product-price {
+        font-size: 18px;
+        color: #000;
+        font-weight: 600;
+        margin: 40px 10px 10px 10px;
+      }
+      .product-title {
+        font-size: 14px;
+        color: grey;
+        margin: 10px 10px 20px 10px;
+      }
+      .add-btn {
+        border: none;
+        background: $mediumGrey;
+        width: 85%;
+        display: block;
+        margin-top: 30px !important;
+        margin: auto;
+        border-radius: 5px;
+        text-align: center;
+        outline: none;
+        height: 40px;
+        position: relative;
+        overflow: hidden;
+        cursor: pointer;
+        transition: all 0.3s ease-out;
+
+        &:hover {
+          background: $darkGrey;
+        }
+
+        .plus {
+          position: absolute;
+          top: 0;
+          right: 0;
+          height: 100%;
+          width: 40px;
+          background: $darkGrey;
+          @include flex(center, row, center);
+          font-size: 21px;
+          color: gray;
+        }
+      }
+    }
+  }
+}
+
+@keyframes blur {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

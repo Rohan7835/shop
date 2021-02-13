@@ -1,0 +1,89 @@
+@import "./components/header";
+@import "./components/sidebar";
+@import "./components/products";
+@import "./variables";
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background: $lighgrey;
+  color: #000;
+  font-family: "Poppins", sans-serif;
+}
+.loading-section {
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #fff none repeat scroll 0% 0%;
+}
+.loader i {
+  font-size: 40px;
+  color: #000;
+}
+.loader {
+  height: 70px;
+  width: 70px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.border {
+  border: 4px solid #000;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  border-radius: 3px;
+  top: 0;
+  left: 0;
+  animation: rotate 1s ease forwards infinite;
+}
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(90deg);
+  }
+}
+
+/* FADE IN FADE OUT */
+.slidein-slideout-appear {
+  opacity: 0;
+  transform: translateX(100%);
+}
+.slidein-slideout-appear-active {
+  opacity: 1;
+  transform: translateX(0%);
+  transition: opacity 250ms, transform 250ms;
+}
+.slidein-slideout-enter {
+  opacity: 0;
+  transform: translateX(100%);
+}
+.slidein-slideout-enter-active {
+  opacity: 1;
+  transform: translateX(0%);
+  transition: opacity 250ms, transform 250ms;
+}
+.slidein-slideout-exit {
+  opacity: 1;
+}
+.slidein-slideout-exit-active {
+  opacity: 0;
+  transform: translateX(100%);
+  transition: opacity 250ms, transform 250ms;
+}
+.slidein-slideout-exit-done {
+  opacity: 0;
+}
+/* */

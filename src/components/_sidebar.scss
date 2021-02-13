@@ -1,0 +1,38 @@
+@import "../variables";
+
+.sidebar {
+  background: #fff;
+  width: 300px;
+  position: fixed;
+  height: 100%;
+  transition: all 0.3s ease-out;
+  top: 90px;
+  padding: 20px 0px;
+
+  .side-nav-links {
+    width: 100%;
+    .side-link {
+      @include flex(space-between, row, center);
+      padding: 18px 10px;
+      cursor: pointer;
+      transition: all 0.1s ease-out;
+
+      &:hover {
+        background: $mediumGrey;
+      }
+      & > i {
+        width: 40px;
+      }
+      .side-link-title {
+        flex: 2 !important;
+      }
+      .arrow {
+        font-size: 20px;
+        color: grey;
+      }
+    }
+    .active {
+      background: $mediumGrey;
+    }
+  }
+}

@@ -1,0 +1,10 @@
+$lighgrey: #f7f7f7;
+$mediumGrey: rgb(239, 239, 239);
+$darkGrey: rgb(226, 226, 226);
+
+@mixin flex($justify, $direction, $align) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+  flex-direction: $direction;
+}

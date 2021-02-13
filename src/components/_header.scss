@@ -1,0 +1,176 @@
+@import "../variables";
+
+header {
+  background-color: #fff;
+  height: 90px;
+  width: 100%;
+  @include flex(space-between, row, center);
+  padding: 0px 20px;
+  box-shadow: 0px 5px 5px rgb(231, 231, 231);
+  z-index: 9999;
+  position: fixed;
+  top: 0;
+  animation: slideDown 0.2s ease-out;
+
+  .menu-toggler {
+    flex: 1;
+    .icon-justify {
+      height: 20px;
+      width: 25px;
+      @include flex(space-between, column, flex-start);
+      cursor: pointer;
+
+      & > div {
+        height: 3px;
+        width: 100%;
+        background: #000;
+      }
+      div:nth-of-type(1) {
+        width: 40% !important;
+        border-radius: 2px;
+      }
+      div:nth-of-type(2) {
+        width: 100% !important;
+        border-radius: 2px;
+        height: 3px !important;
+      }
+      div:nth-of-type(3) {
+        width: 70% !important;
+        border-radius: 2px;
+      }
+    }
+  }
+
+  .search-bar {
+    max-width: 500px;
+    width: 100%;
+    position: relative;
+    flex: 2;
+
+    .search-icon {
+      position: absolute;
+      top: 55%;
+      left: 10px;
+      transform: translateY(-50%);
+      font-size: 18px;
+      color: rgb(77, 77, 77);
+      font-weight: 100 !important;
+    }
+    input {
+      height: 45px;
+      width: 100%;
+      border: 2px solid black;
+      border-radius: 5px;
+      padding: 10px;
+      padding-left: 38px;
+      color: rgb(71, 71, 71);
+      outline: none;
+    }
+  }
+  nav {
+    flex: 1;
+    text-align: right;
+    display: flex;
+    justify-content: flex-end;
+
+    .nav-links {
+      @include flex(center, row, center);
+
+      .nav-link {
+        list-style: none;
+        margin: 5px 10px;
+        padding: 10px;
+        cursor: pointer;
+      }
+    }
+  }
+}
+.cart-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(26, 26, 26, 0.5);
+  z-index: 999999;
+
+  .cart {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 400px;
+    background: #fff;
+    padding: 20px;
+
+    .cart-header {
+      @include flex(space-between, row, center);
+      padding-bottom: 20px;
+      border-bottom: 1px solid rgb(226, 226, 226);
+
+      h3 {
+        font-size: 25px;
+        user-select: none;
+      }
+      .cross {
+        font-size: 25px;
+        text-align: right;
+        cursor: pointer;
+        padding: 4px;
+      }
+    }
+    .cart-items {
+      width: 100%;
+
+      .cart-item {
+        @include flex(flex-start, row, center);
+        height: 150px;
+        border-bottom: 1px solid rgb(199, 199, 199);
+        position: relative;
+
+        .price-bold {
+          position: absolute;
+          bottom: 0;
+          right: 10px;
+          font-size: 20px;
+          color: #000;
+          font-weight: 500;
+        }
+
+        img {
+          width: 100px;
+        }
+        .cart-details {
+          color: rgb(97, 97, 97);
+          font-size: 14px;
+
+          button {
+            border: none;
+            outline: none;
+            max-width: 110px;
+            width: 100%;
+            height: 30px;
+            background: #000;
+            color: #fff;
+            border-radius: 5px;
+            margin: 20px;
+            @include flex(space-between, row, center);
+            padding: 0px 10px;
+            p {
+              font-size: 20px;
+              cursor: pointer;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@keyframes slideDown {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(0%);
+  }
+}
